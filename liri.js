@@ -166,10 +166,10 @@ function liriApp(command, item) {
 			fs.readFile('random.txt', 'utf8', (err, data) => {
 				if (err) throw err;
 				var command = data.slice(0, data.indexOf(','));
-				var song = data.slice(data.indexOf('"') + 1, data.lastIndexOf('"'));
+				var item = data.slice(data.indexOf('"') + 1, data.lastIndexOf('"'));
 				console.log(command);
-				console.log(song);
-				liriApp(command, song);
+				console.log(item);
+				liriApp(command, item);
 			});
 			break;
 		default:
@@ -185,7 +185,9 @@ function tweetProgram() {
 	client.get('statuses/user_timeline', function(error, tweets, response) {
 	 	if (!error) {
 	 		for (var i = 0; i < 20; i++) {
-	 			console.log(JSON.stringify(tweets[i].text));
+	 			console.log("Date Created: " + JSON.stringify(tweets[i].created_at));
+	 			console.log("Tweet: " + JSON.stringify(tweets[i].text));
+	 			console.log("---------------------------------------------");
 	 		}
 		}
 	});
