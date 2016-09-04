@@ -28,58 +28,17 @@ inquirer.prompt([
 function liriApp(command, item) {
 	switch(command) {
 		case 'my-tweets':
-			console.log(
-			"            (####)\n" + 
-			"          (#######)\n" + 
-			"        (#########)\n" + 
-			"       (#########)\n" + 
-			"      (#########)\n" + 
-			"     (#########)\n" + 
-			"    (#########)       READ\n" + 
-			"   (#########)       THE\n" + 
-			"  (#########)       TWEETS\n" + 
-			"   (o)(o)(##)\n" + 
-			" ,_C     (##)\n" + 
-			"/___,   (##)\n" + 
-			"  \\     (#)\n" + 
-			"   |    |\n" + 
-			"   OOOOOO\n" + 
-			"  /      \\\n"
-				);
+			
+			fs.readFile('./ascii/marge.txt', 'UTF-8', function(err, contents) {
+				console.log(contents);
+			});
 			//display 20 most recent tweets
 			tweetProgram();
 			break;
 		case 'spotify-this-song':
-			console.log(
-				"      .sS$$$$$$$$$$$$$$Ss.\n" +
-				"     .$$$$$$$$$$$$$$$$$$$$$$s.\n" +
-				"     $$$$$$$$$$$$$$$$$$$$$$$$S.\n" +
-				"     $$$$$$$$$$$$$$$$$$$$$$$$$$s.\n" +
-				"     S$$$$'        `$$$$$$$$$$$$$\n" +
-				"     `$$'            `$$$$$$$$$$$.\n" +
-				"      :               `$$$$$$$$$$$\n" +
-				"     :                 `$$$$$$$$$$\n" +
-				"  .====.  ,=====.       $$$$$$$$$$\n" +
-				".'      ~'       '.    s$$$$$$$$$$      PICK\n" +
-				":       :         :=_  $$$$$$$$$$$      A\n" +
-				"`.  ()  :   ()    ' ~=$$$$$$$$$$$'      SONG\n" + 
-				"  ~====~`.      .'    $$$$$$$$$$$       NEIGHBOR\n" + 
-				"   .'     ~====~     sS$$$$$$$$$'\n" + 
-				"   :      .         $$$$$' $$$$\n" + 
-				" .sS$$$$$$$$Ss.     `$$'   $$$'\n" + 
-				"$$$$$$$$$$$$$$$s         s$$$$\n" + 
-				"$SSSSSSSSSSSSSSS$        $$$$$\n" + 
-				"     :                   $$$$'\n" + 
-				"      `.                 $$$'\n" + 
-				"        `.               :\n" + 
-				"         :               :\n" + 
-				"         :              .'`.\n" + 
-				"        .'.           .'   :\n" + 
-				"       : .$s.       .'    .'\n" + 
-				"       :.S$$$S.   .'    .'\n" + 
-				"       : $$$$$$`.'    .'\n" + 
-				"          $$$$   `. .'\n" + 
-				"                   `");
+			fs.readFile('./ascii/homer.txt', 'UTF-8', function(err, contents) {
+				console.log(contents);
+			});
 			//ask for a song to search
 			if (typeof item === 'undefined') {
 				inquirer.prompt([
@@ -101,30 +60,9 @@ function liriApp(command, item) {
 			}
 			break;
 		case 'movie-this':
-			console.log(
-						"     ,---.\n" + 
-						"   ,.'-.   \\\n" + 
-						"  ( ( ,''''''-.\n" + 
-						"  `,X          `.\n" + 
-						"  /` `           `._      THESE\n" + 
-						" (            ,   ,_\\      ASCII\n" + 
-						" |          ,---.,'o `.      CHARACTERS\n" + 
-						" |         / o   \\     )      WERE\n" + 
-						"  \\ ,.    (      .____,      A\n" + 
-						"   \\| \\    \\____,'     \\      WASTE\n" + 
-						" '`'\\  \\        _,____,'     OF\n" + 
-						" \\  ,--      ,-'     \\      TIME\n" + 
-						"   ( C     ,'         \\\n" + 
-						"    `--'  .'           |\n" + 
-						"      |   |         .O |\n" + 
-						"    __|    \\        ,-'_\n" + 
-						"   / `L     `._  _,'  ' `.\n" + 
-						"  /    `--.._  `',.   _\\  `\n" + 
-						"  `-.       /\\  | `. ( ,\\  \\\n" + 
-						" _/  `-._  /  \\ |--'  (     \\\n" + 
-						"'  `-.   `'    \\/\\`.   `.    )\n" + 
-						"      \\  -hrr-    \\ `.  |    |"
-						);
+			fs.readFile('./ascii/batman.txt', 'UTF-8', function(err, contents) {
+				console.log(contents);
+			});
 			//ask for a movie to search
 			if(typeof item === 'undefined') {
 				inquirer.prompt([
@@ -148,21 +86,9 @@ function liriApp(command, item) {
 			}
 			break;
 		case 'do-what-it-says':
-			console.log(
-					'  |\\\/\\\/\\\/\\\/\\\/|\n' + 
-					'  |          |\n' + 
-					'  |          |\n' + 
-					'  |          |\n' + 
-					'  |    __  __|      NICE\n' + 
-					'  |   /  \\/  \\    CHOICE\n' + 
-					'  |  (o   )o  )     MAN\n' + 
-					' /c   \\__/ --.\n' + 
-					' \_   ,     -"\n' + 
-					'  |  "\_______)\n' + 
-					'  |      _)\n' + 
-					'  |     |\n' + 
-					' /`-----"\\\n' + 
-					'/         \\');
+			fs.readFile('./ascii/spiderman.txt', 'UTF-8', function(err, contents) {
+				console.log(contents);
+			});
 			fs.readFile('random.txt', 'utf8', (err, data) => {
 				if (err) throw err;
 				var command = data.slice(0, data.indexOf(','));
