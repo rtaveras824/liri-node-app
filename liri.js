@@ -29,16 +29,14 @@ function liriApp(command, item) {
 	switch(command) {
 		case 'my-tweets':
 			
-			fs.readFile('./ascii/marge.txt', 'UTF-8', function(err, contents) {
-				console.log(contents);
-			});
+			var ascii = fs.readFileSync('./ascii/marge.txt', 'UTF-8');
+			console.log(ascii);
 			//display 20 most recent tweets
 			tweetProgram();
 			break;
 		case 'spotify-this-song':
-			fs.readFile('./ascii/homer.txt', 'UTF-8', function(err, contents) {
-				console.log(contents);
-			});
+			var ascii = fs.readFileSync('./ascii/homer.txt', 'UTF-8');
+			console.log(ascii);
 			//ask for a song to search
 			if (typeof item === 'undefined') {
 				inquirer.prompt([
@@ -60,9 +58,8 @@ function liriApp(command, item) {
 			}
 			break;
 		case 'movie-this':
-			fs.readFile('./ascii/batman.txt', 'UTF-8', function(err, contents) {
-				console.log(contents);
-			});
+			var ascii = fs.readFileSync('./ascii/batman.txt', 'UTF-8');
+			console.log(ascii);
 			//ask for a movie to search
 			if(typeof item === 'undefined') {
 				inquirer.prompt([
@@ -86,9 +83,8 @@ function liriApp(command, item) {
 			}
 			break;
 		case 'do-what-it-says':
-			fs.readFile('./ascii/spiderman.txt', 'UTF-8', function(err, contents) {
-				console.log(contents);
-			});
+			var ascii = fs.readFileSync('./ascii/spiderman.txt', 'UTF-8');
+			console.log(ascii);
 			fs.readFile('random.txt', 'utf8', (err, data) => {
 				if (err) throw err;
 				var command = data.slice(0, data.indexOf(','));
